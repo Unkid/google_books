@@ -1,0 +1,34 @@
+.bookSearch{
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    height: 44vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #444444;
+    color: white;
+    padding: 15px;
+}
+
+.bookInput{
+    border: 1px solid transparent;
+    background-color: white;
+    font-size: medium;
+    outline: none;
+    margin: 5px;
+    padding: 5px;
+    height: 40px;
+    width: 50%;
+
+}
+
+.btnSearch{
+    height: 40px;
+    margin: 5px;
+    font-size: medium;
+    width: 10%;
+    border: 1px solid transparent;
+}
