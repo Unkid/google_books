@@ -4,11 +4,10 @@
     display: flex;
     width: 100%;
     padding: 20px;
-    height: 44vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #444444;
+    background-color: #1342a8;
     color: white;
     padding: 15px;
 }
@@ -18,17 +17,55 @@
     background-color: white;
     font-size: medium;
     outline: none;
-    margin: 5px;
+    margin-top: 15px;
     padding: 5px;
     height: 40px;
     width: 50%;
+    box-sizing: border-box;
 
+}
+
+.bookButton{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
 }
 
 .btnSearch{
-    height: 40px;
+    height: 30px;
     margin: 5px;
     font-size: medium;
-    width: 10%;
+    width: 70px;
     border: 1px solid transparent;
 }
+
+.circleWrapper{
+    width: 30px;
+    height: 30px;
+    margin:5px;
+
+}
+
+.circle {
+    display: inline-block;
+    border: 4px solid rgba(255, 255, 255, 0.466);
+    border-left-color: #ffffff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    animation: circle-spin 1.3s linear infinite;
+    box-sizing: border-box;
+    
+  }
+  
+  @keyframes circle-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

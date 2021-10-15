@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 import './App.css';
 import Main from './components/main/Main';
 

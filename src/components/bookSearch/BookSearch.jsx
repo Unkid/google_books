@@ -3,7 +3,7 @@ import BookSelector from "../bookSelector/BookSelector";
 import './bookSearch.css'
 
 
-const BookSearch = ({filter, setFilter, searchHandler}) => {   
+const BookSearch = ({filter, setFilter, searchHandler, isLoading}) => {   
     
     const enterDown = (e)=>{
         if (e.keyCode === 13)
@@ -12,7 +12,7 @@ const BookSearch = ({filter, setFilter, searchHandler}) => {
 
     return (
         <div className="bookSearch">
-            <h1>Введите запрос в строку поиска</h1>
+            <h1>Google books search</h1>
             <input className="bookInput" 
                 value={filter.query}
                 onChange={e=> setFilter({
@@ -33,8 +33,7 @@ const BookSearch = ({filter, setFilter, searchHandler}) => {
                 onChange={selectedCat => setFilter({...filter, categorie:selectedCat})} 
                 defaultValue='Filter by'               
                 options={[,
-                {value: '', name:'all'},
-                {value: 'art', name:'art'},
+                {value: 'all', name:'all'},
                 {value: 'art', name:'art'},
                 {value: 'biography', name:'biography'},
                 {value: 'computers', name:'computers'},
@@ -43,7 +42,12 @@ const BookSearch = ({filter, setFilter, searchHandler}) => {
                 {value: 'poetry', name:'poetry'},
                 ]}/>
             </div>
-            <button className='btnSearch' onClick={()=>searchHandler(filter)}>Искать</button>
+            <div className='bookButton'>
+                <button className='btnSearch' onClick={()=>searchHandler(filter)}>Search</button>
+                <div className='circleWrapper'>
+                    {isLoading && <div className="circle"></div>}    
+                </div> 
+            </div>
         </div>
     )
 }

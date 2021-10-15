@@ -2,7 +2,6 @@ import React from "react";
 import './bookSelector.css'
 
 const BookSelector = ({options, defaultValue, value, onChange}) => {
-    console.log(onChange)
     return(
         <select className="bookSelect" 
         value={value}
