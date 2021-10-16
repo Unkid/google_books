@@ -3,7 +3,7 @@ import BookCard from "../bookCard/BookCard";
 import './booksList.css'
 
 const BookList = ({books, onClick,totalPages, currentPage, isLoading}) => {
-    if (books==false){
+    if (books==false||totalPages===0){
         return (
             <div className="bookNotFound">
                 <img src='/images/notFound.png' />

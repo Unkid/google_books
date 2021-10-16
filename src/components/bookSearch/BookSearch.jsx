@@ -19,7 +19,7 @@ const BookSearch = ({filter, setFilter, searchHandler, isLoading}) => {
                     ...filter,
                     query: e.target.value
                 })}
-                placeholder='Поиск...'
+                placeholder='Search...'
                 onKeyDown={(e)=>enterDown(e)} />
             <div className="selectors">
             <BookSelector value={filter.sort}

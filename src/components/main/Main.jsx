@@ -6,8 +6,6 @@ import BookList from '../bookList/BookList';
 import BookSearch from '../bookSearch/BookSearch';
 import './main.css'
 
-
-
 const Main = () => {
     const dispatch = useDispatch()
     const books = useSelector(state => state.books.items)
@@ -17,6 +15,8 @@ const Main = () => {
     const isLoading = useSelector(state => state.books.isLoading)
     const [filter, setFilter] = useState({query:'', sort:'relevance', categorie:'all' })
     const totalPages = Math.ceil(totalItems/perPage)
+
+    console.log(books)
     
     useEffect(()=> {
         dispatch(getMoreBooks(filter, currentPage, perPage))
@@ -31,8 +31,6 @@ const Main = () => {
     function pageHandler(){
         dispatch(setCurrentPage(currentPage + 1))
     }
-
-    console.log(books)
     
     return (
         <div className='container'>

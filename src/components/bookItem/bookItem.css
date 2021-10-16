@@ -1,0 +1,45 @@
+.bookContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.bookItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1000px;
+    background-color: #1342a8;
+    padding: 20px;
+}
+
+.bookImg{
+    height: 400px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookImg img{
+    height: 400px
+}
+
+.itemContent{
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+    margin: 0 10px
+}
+
+.itemAbout{
+    font-size: medium;
+    color:white;
+    margin: 5px 0px;
+}
+
+.itemTitle{
+    color:white;
+    margin: 5px 0px;
+}

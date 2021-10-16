@@ -7,7 +7,7 @@ const BookCard = ({book}) => {
     return (
         <div className="bookCard">
         <div className="bookHeader">
-            <NavLink class='inactive' activeClassName='active' to={`/card/${book.id}`} >
+            <NavLink className='inactive' activeClassName='active' to={`/card/${book.id}`} >
                 <p>{book.volumeInfo.title}</p>
             </NavLink>
         </div>

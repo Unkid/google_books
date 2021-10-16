@@ -25,7 +25,6 @@ export default function booksReducer(state=defaultState, action){
         case SET_LOADING:
             return{
                 ...state,
-                item: [],
                 oneIsLoading: action.payload
             }
         case SET_IS_LOADING:
@@ -42,6 +41,7 @@ export default function booksReducer(state=defaultState, action){
             return{
                 ...state,
                 items: [...state.items, ...action.payload.items],
+                totalCount: action.payload.totalItems,
                 isLoading: false
             }     
 
