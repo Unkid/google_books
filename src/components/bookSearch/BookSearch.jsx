@@ -43,7 +43,7 @@ const BookSearch = ({filter, setFilter, searchHandler, isLoading}) => {
                 ]}/>
             </div>
             <div className='bookButton'>
-                <button className='btnSearch' onClick={()=>searchHandler(filter)}>Search</button>
+                <button className='btnSearch' onClick={()=>searchHandler()}>Search</button>
                 <div className='circleWrapper'>
                     {isLoading && <div className="circle"></div>}    
                 </div> 

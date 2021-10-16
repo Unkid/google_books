@@ -18,7 +18,6 @@ const Main = () => {
     const [filter, setFilter] = useState({query:'', sort:'relevance', categorie:'all' })
     const totalPages = Math.ceil(totalItems/perPage)
     
-    
     useEffect(()=> {
         dispatch(getMoreBooks(filter, currentPage, perPage))
     },[currentPage])
@@ -26,19 +25,19 @@ const Main = () => {
     function searchHandler(){
         dispatch(setCurrentPage(1))
         if (filter.query)        
-            dispatch(getBooks(filter))
+            dispatch(getBooks(filter, perPage))
     }
+
+    function pageHandler(){
+        dispatch(setCurrentPage(currentPage + 1))
+    }
+
     console.log(books)
     
     return (
         <div className='container'>
             <BookSearch filter={filter} searchHandler={searchHandler} setFilter={setFilter} isLoading={isLoading}/>            
-            <BookList books={books} isLoading={isLoading} totalPages={totalPages} currentPage={currentPage}/>                        
-            
-            {totalPages !== currentPage && totalPages &&
-            <button className="btn-load-more" onClick={() => dispatch(setCurrentPage(currentPage + 1))}>
-            {isLoading ? 
-            'Loading...' : 'Load More'}</button>}
+            <BookList books={books} isLoading={isLoading} onClick={pageHandler} totalPages={totalPages} currentPage={currentPage}/>                        
         </div>
     );
 };

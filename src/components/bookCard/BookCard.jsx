@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import './bookCard.css'
 
 const BookCard = ({book}) => {
@@ -6,7 +7,9 @@ const BookCard = ({book}) => {
     return (
         <div className="bookCard">
         <div className="bookHeader">
-            <p>{book.volumeInfo.title}</p>
+            <NavLink class='inactive' activeClassName='active' to={`/card/${book.id}`} >
+                <p>{book.volumeInfo.title}</p>
+            </NavLink>
         </div>
             <div className="bookContent">
                 <div className='imgWrapper'>

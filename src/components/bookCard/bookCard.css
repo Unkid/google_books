@@ -23,9 +23,20 @@
     height: 70px;
     font-size: small;
     text-align: center;
+    text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.inactive{
+    text-decoration: none;
+    color:aliceblue
+}
+
+.active{
+    text-decoration: none;
+    color:aliceblue
 }
 
 .bookContent {

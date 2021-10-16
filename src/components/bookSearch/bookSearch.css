@@ -39,6 +39,7 @@
     font-size: medium;
     width: 70px;
     border: 1px solid transparent;
+    cursor:pointer;
 }
 
 .circleWrapper{

@@ -11,29 +11,30 @@
   content: '';
 }
 
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.btnLoadMore{
+  height: 30px;
+  margin: 20px;
+  font-size: medium;
+  width: 200px;
+  color: white;
+  border: 1px solid transparent;
+  background-color: #1342a8;
+  cursor: pointer;
+}
+
 .bookNotFound {
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.circle {
-    display: inline-block;
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #78787c;
-    border-radius: 50%;
-    margin:20px auto;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    animation: circle-spin 1.3s linear infinite;
-  }
+    margin: 20px;
 
-  @keyframes circle-spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+}
+
