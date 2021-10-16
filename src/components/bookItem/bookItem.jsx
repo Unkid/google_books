@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
+import { Redirect, useParams } from "react-router";
 import { getBook } from "../../actions/books";
 import './bookItem.css'
 
@@ -10,14 +10,16 @@ const BookItem = () => {
     const {bookId} = useParams()    
     const [book, setBook] = useState([])
     const isLoading = useSelector(state => state.books.oneIsLoading)
+    const errors = useSelector(state => state.errors.isFetchError) 
 
     useEffect(()=>{ 
 
         dispatch(getBook(bookId, setBook))                
     }, [])
-      
-    console.log(book)
-    console.log(isLoading)
+    
+    if (errors) 
+        return <Redirect to='/error' />
+
     return(
         <div className="bookContainer">
             {isLoading ?

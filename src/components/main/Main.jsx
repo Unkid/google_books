@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+import { Redirect } from 'react-router';
 import { getMoreBooks, getBooks } from '../../actions/books';
 import { setCurrentPage } from '../../reducers/booksReducer';
 import BookList from '../bookList/BookList';
@@ -13,10 +14,9 @@ const Main = () => {
     const perPage = useSelector(state => state.books.perPage)
     const currentPage = useSelector(state => state.books.currentPage)
     const isLoading = useSelector(state => state.books.isLoading)
+    const errors = useSelector(state => state.errors.isFetchError)
     const [filter, setFilter] = useState({query:'', sort:'relevance', categorie:'all' })
-    const totalPages = Math.ceil(totalItems/perPage)
-
-    console.log(books)
+    const totalPages = Math.ceil(totalItems/perPage)   
     
     useEffect(()=> {
         dispatch(getMoreBooks(filter, currentPage, perPage))
@@ -31,6 +31,9 @@ const Main = () => {
     function pageHandler(){
         dispatch(setCurrentPage(currentPage + 1))
     }
+
+    if (errors) 
+        return <Redirect to='/error' />
     
     return (
         <div className='container'>

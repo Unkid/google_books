@@ -1,0 +1,28 @@
+.errorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.errorItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+    background-color: #1342a8;
+    padding: 20px;
+    align-items: center;
+    height: 50%;
+    color: white
+}
+
+.errorButton{
+    height: 30px;
+    margin: 5px;
+    font-size: medium;
+    width: 70px;
+    border: 1px solid transparent;
+    cursor:pointer;
+    margin-top: 20px;
+}
